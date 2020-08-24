@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension version="2.5" type="plugin" group="vmpayment" >
+    <name>VM - Payment - Layer</name>
+    <creationDate>August 2020</creationDate>
+    <author>Openers</author>
+    <copyright>Copyright (C) 2020 Open.Money Team. All rights reserved.</copyright>
+    <license>http://www.gnu.org/licenses/gpl-3.0.html GNU/GPL</license>
+    <version>3.8</version>
+     <description><![CDATA[<a href="https://open.money" target="_blank">Layer Payment</a> provider. ]]>
+    </description>
+    <files>
+	<filename plugin="layerpayment">layerpayment.php</filename>
+        
+	</files>
+	
+	<media folder="images" destination="../images/stories/virtuemart/payment">
+	<filename>layerpayment-logo.png</filename>
+    </media>
+    <languages>
+	<language tag="en-GB">en-GB.plg_vmpayment_layerpayment.ini</language>
+    </languages>    
+    <vmconfig>
+        <fields name="params">	
+            <fieldset name="basic">
+                <field type="text" name="accesskey"  size="70" label="Access Key"/>
+                <field type="text" name="secretkey"  size="70" label="Secret Key"/>               
+                <field name="environment" type="list" default="Test" label="Environment">
+                    <option value="live">Live</option>
+                    <option value="test">Test</option>
+                </field>
+                <field type="textarea" name="description" cols="10" rows="4"  label="Description"/>
+                <field name="status_pending" type="vmorderstate" scope="com_virtuemart" default="P" label="VMPAYMENT_LAYER_STATUS_PENDING" description="VMPAYMENT_LAYER_STATUS_PENDING_EXPLAIN" />
+                <field name="status_success" type="vmorderstate" scope="com_virtuemart" default="C" label="VMPAYMENT_LAYER_STATUS_SUCCESS" description="VMPAYMENT_LAYER_STATUS_SUCCESS_EXPLAIN" />
+                <field name="status_canceled" type="vmorderstate" scope="com_virtuemart" default="X" label="VMPAYMENT_LAYER_STATUS_FAILED" description="VMPAYMENT_LAYER_STATUS_FAILED_EXPLAIN" />
+            </fieldset>
+        </fields>
+    </vmconfig>
+
+</extension>
